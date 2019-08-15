@@ -1,0 +1,33 @@
+{
+	"breadcrumbs.enabled": true,
+
+	"editor.rulers": [
+		79,
+		120
+	],
+
+	"editor.acceptSuggestionOnEnter": "smart",
+	"editor.fontFamily": "'Go Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"editor.renderControlCharacters": false,
+	"editor.renderWhitespace": "all",
+	"editor.suggest.localityBonus": true,
+	"editor.tabCompletion": "on",
+
+	"explorer.confirmDelete": false,
+
+	"extensions.ignoreRecommendations": false,
+
+	"files.enableTrash": false,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+
+	"search.useIgnoreFiles": false,
+
+	"window.titleBarStyle": "custom",
+	"window.zoomLevel": 2,
+
+	"workbench.colorTheme": "Gruvbox Dark (Medium)",
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.startupEditor": "newUntitledFile"
+}

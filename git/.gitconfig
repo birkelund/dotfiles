@@ -1,0 +1,98 @@
+[core]
+	editor = vim
+	abbrev = 12
+
+[user]
+	name = Klaus Birkelund Jensen
+	email = klaus@birkelund.eu
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current  = yellow reverse
+	local    = yellow
+	remote   = red
+	upstream = yellow
+
+[color "status"]
+	changed = yellow
+	nobranch = red
+
+[http]
+	cookiefile = ~/.gitcookies
+
+[credential]
+	helper = cache
+
+[color "diff"]
+	whitespace = red reverse
+
+[color "interactive"]
+	prompt = yellow
+	header = bold
+	help = green
+	error = red
+
+[diff]
+	mnemonicPrefix = true
+	renames = true
+	algorithm = patience
+	ignoreSubmodules = all
+
+[pretty]
+	fixes = Fixes: %h (\"%s\")
+
+[push]
+	default = nothing
+
+[alias]
+	# add
+	a = add
+
+	# amend
+	amend = commit --amend
+
+	# branch
+	b = branch -v
+
+	# checkout
+	co = checkout
+	nb = checkout -b
+
+	# commit
+	ci = commit
+
+	# pull
+	pl = pull --ff-only
+	pr = pull --rebase
+
+	# push
+	ps = push
+
+	# rebase
+	rc = rebase --continue
+	rs = rebase --skip
+
+	# remote
+	r = remote -v
+
+	# reset
+	unstage = reset HEAD
+	uncommit = reset --soft HEAD^
+
+	# stash
+	ss = stash
+	sl = stash list
+	sa = stash apply
+	sd = stash drop
+
+	# status
+	s = status
+	st = status
+
+	# tag
+	t = tag
+
+[include]
+	path = ~/.gitconfig.d/sendemail

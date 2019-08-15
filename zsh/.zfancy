@@ -1,0 +1,60 @@
+#  color prompt
+autoload -U colors && colors
+
+if [[ ${UID} == 0 ]] ; then
+  PROMPT="%{$fg_bold[red]%}%n%{$reset_color%}/%B%m%b # "
+else
+  if [[ -v SSH_TTY ]]; then
+    PROMPT="%B%m%b (%{$fg_bold[cyan]%}remote%{$reset_color%}) %(?..%{$fg_bold[red]%}%?%{$reset_color%} )$ "
+	else
+		PROMPT="%B%m%b %(?..%{$fg_bold[red]%}%?%{$reset_color%} )$ "
+	fi
+fi
+
+# detect screen session
+sty=$( env | grep -E '^STY=.+' )
+if [[ -n ${sty} ]] ; then
+  styname=${sty##*\.}
+  if [[ ${styname} != ${HOST} ]] ; then
+    PROMPT="(${styname}) ${PROMPT}"
+  else
+    PROMPT="(screen) ${PROMPT}"
+  fi
+fi
+
+export PROMPT
+
+# some colors
+eval $(dircolors -b "${HOME}/.zsh/LS_COLORS")
+
+# man colors
+export LESS_TERMCAP_us=$'\E[36m'  # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'   # end underline
+
+# j
+if command -v jump > /dev/null; then
+  eval "$(jump shell zsh)"
+fi
+
+# setup completion
+autoload -Uz compinit
+compinit
+
+# general completion styles
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+# command specific styles
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# vim: set ft=zsh ts=2 sts=2 sw=2:

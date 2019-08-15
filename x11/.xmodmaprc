@@ -1,0 +1,13 @@
+! danish characters 'æ', 'ø' and 'å'
+keycode  26 = e E ae AE
+keycode  32 = o O oslash Oslash
+keycode  38 = a A aring Aring
+
+! make sure I can write "pißß"
+keycode  39 = s S ssharp ssharp
+
+! use alt-gr as mode switch
+keycode 108 = Mode_switch Mode_switch
+
+! use the 'menu'-key as the multi key (compose)
+keycode 135 = Multi_key

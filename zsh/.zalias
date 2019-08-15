@@ -1,0 +1,32 @@
+# nocorrect for a bunch of standard commands
+alias ls="nocorrect ls --color=auto -F"
+alias l="nocorrect ls --color=auto -F"
+alias ll="nocorrect ls --color=auto -alF"
+alias mv="nocorrect mv"
+alias cp="nocorrect cp"
+alias mkdir="nocorrect mkdir"
+
+# useful
+alias tailf="tail -f"
+alias sur="sudo -i"
+
+# "funny"
+alias bitch,="/usr/bin/sudo"
+alias murder="kill -9"
+
+# git
+alias gb="git b"
+alias gba="git b -a"
+alias gbl="noglob git b -a -l"
+alias gbr="git b -r"
+alias gbv="git b -v"
+alias gc="git cherry-pick"
+alias gco="git co"
+alias gd="git diff"
+alias gl="git log"
+alias gr="git r"
+alias gs="git status"
+alias gsh="git show"
+alias gpl="git pl"
+
+# vim: set ft=zsh:

@@ -1,0 +1,9 @@
+slugify() {
+	echo "$*" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z
+}
+
+docker-gtfo() {
+	docker ps -a --format="{{.ID}}" | xargs docker rm -f
+}
+
+# vim: set ft=zsh:
