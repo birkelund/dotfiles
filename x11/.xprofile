@@ -1,0 +1,11 @@
+# key refresh rate
+xset r rate 320 35
+
+# no beeping please
+xset -b
+
+# set background image
+source $HOME/.fehbg
+
+# set cursor
+xsetroot -cursor_name left_ptr
